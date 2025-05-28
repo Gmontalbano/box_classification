@@ -7,11 +7,14 @@ import numpy as np
 from pathlib import Path
 st.set_page_config(page_title="Classificador de Pacotes", layout="centered")
 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent  # volta do src/ para a raiz do projeto
+MODEL_PATH = BASE_DIR / "src/utils/dados/models/package_inspection/best.pth"
 
 
 # ========== CONFIGURAÇÃO ==========
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-MODEL_PATH = Path("utils/dados/models/package_inspection/best.pth")
 CLASS_NAMES = ['damaged', 'intact']
 
 # ========== TRANSFORM ==========
